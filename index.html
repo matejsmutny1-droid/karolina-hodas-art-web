@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Karolína Hodas Art</title>
 
-  <!-- FONTS -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -18,7 +17,7 @@
     body {
       background: #f4efe7;
       color: #1a1a1a;
-      font-family: 'Inter', sans-serif;
+      font-family: 'Raleway', sans-serif;
       line-height: 1.8;
     }
 
@@ -30,93 +29,116 @@
       display: flex;
       justify-content: space-between;
       padding: 30px 80px;
-      background: rgba(244, 239, 231, 0.6);
-      backdrop-filter: blur(10px);
       z-index: 1000;
+      transition: all 0.4s ease;
+    }
+
+    .navbar.hidden {
+      transform: translateY(-100%);
     }
 
     .logo {
       font-family: 'Playfair Display', serif;
       font-size: 1.3rem;
       letter-spacing: 1.5px;
+      color: white;
     }
 
     .navbar a {
       margin-left: 40px;
       text-decoration: none;
-      color: #1a1a1a;
-      font-size: 0.9rem;
-      letter-spacing: 1px;
+      color: white;
+      font-size: 0.85rem;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
       opacity: 0.8;
-      transition: all 0.3s;
-    }
-
-    .navbar a:hover {
-      opacity: 1;
     }
 
     /* HERO */
     .hero {
       height: 100vh;
       background:
-        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
         url('images/hero.jpg') center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 0 20px;
     }
 
     .hero h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 3.8rem;
+      font-size: 4rem;
       color: white;
       letter-spacing: 2px;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      color: rgba(255,255,255,0.85);
-      font-size: 1.1rem;
-      letter-spacing: 1px;
     }
 
     /* SECTIONS */
     .section {
-      padding: 180px 20px;
-      max-width: 1100px;
-      margin: auto;
+      padding: 160px 20px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
     .section h2 {
       font-family: 'Playfair Display', serif;
       font-size: 3rem;
-      margin-bottom: 40px;
-      letter-spacing: 1px;
+      text-align: center;
+      margin-bottom: 80px;
     }
 
-    .section p {
-      max-width: 600px;
+    /* BIO */
+    .bio {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .bio p {
       font-size: 1.05rem;
       color: #444;
+      text-align: justify;
     }
 
     /* TVORBA */
-    .dark {
-      background: #1a1a1a;
-      color: #eee;
-      padding: 120px 80px;
-      margin-top: 80px;
+    #work {
+      background: #111;
+      color: #fff;
+      padding: 180px 40px;
     }
 
-    .dark h2 {
-      letter-spacing: 1px;
+    .work-container {
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
-    .dark p {
-      color: rgba(255,255,255,0.8);
+    .work-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      margin-bottom: 100px;
+    }
+
+    .work-content {
+      max-width: 500px;
+      margin-left: auto;
+    }
+
+    .work-quote {
+      font-size: 1.8rem;
+      font-weight: 300;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .work-sub {
+      font-size: 0.9rem;
+      opacity: 0.6;
+      letter-spacing: 1.5px;
     }
 
     /* GALERIA */
@@ -130,7 +152,7 @@
     .gallery-item {
       background: #f8f5ef;
       padding: 20px;
-      transition: transform 0.4s ease;
+      transition: transform 0.3s;
     }
 
     .gallery-item:hover {
@@ -139,33 +161,28 @@
 
     .gallery img {
       width: 100%;
-      height: auto;
       display: block;
     }
 
     /* COURSES */
     .courses-list {
-      margin-top: 40px;
       list-style: none;
+      margin-top: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .courses-list li {
       margin-bottom: 15px;
-      padding-left: 20px;
-      position: relative;
-      letter-spacing: 0.5px;
-    }
-
-    .courses-list li::before {
-      content: "—";
-      position: absolute;
-      left: 0;
+      text-align: center;
+      font-size: 1rem;
     }
 
     /* CONTACT */
     #contact p {
-      margin-bottom: 12px;
-      letter-spacing: 0.5px;
+      text-align: center;
+      margin-bottom: 10px;
     }
 
     /* FOOTER */
@@ -174,14 +191,29 @@
       padding: 80px 20px;
       font-size: 0.8rem;
       color: #777;
-      letter-spacing: 1px;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width: 800px){
+      .bio {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .navbar {
+        padding: 20px;
+      }
     }
 
   </style>
 </head>
+
 <body>
 
-<header class="navbar">
+<header class="navbar" id="navbar">
   <div class="logo">Karolína Hodas</div>
   <nav>
     <a href="#about">O mne</a>
@@ -193,67 +225,124 @@
 </header>
 
 <section class="hero">
-  <div>
-    <h1>Umenie ako cesta k sebe</h1>
-    <p>Tvorba, ktorá spomaľuje, otvára a prepája</p>
-  </div>
+  <h1>Umenie ako cesta k sebe</h1>
 </section>
 
+<!-- O MNE -->
 <section id="about" class="section">
-  <h2>O mne</h2>
-  <p>
-    K umeniu som mala blízko od detstva. Vyrastala som v prostredí slobody,
-    tvorivosti a lásky. Dnes prepájam umenie s arteterapiou a pomáham ľuďom
-    objavovať ich vlastnú kreativitu a vnútorný pokoj.
-  </p>
-</section>
+  <div class="container">
+    <h2>O mne</h2>
 
-<section id="work" class="section">
-  <div class="dark">
-    <h2>Tvorba</h2>
-    <p>
-      Pracujem s prírodnými materiálmi a tvorba je pre mňa dialóg medzi
-      materiálom, emóciou a momentom.
-    </p>
+    <div class="bio">
+      <p>
+        K umeniu som bola vedená od detstva. Vyrastala som v prostredí slobody,
+        tvorivosti a lásky, ktoré formovalo môj vzťah k svetu aj k sebe samej.
+        Už od útleho veku som sa venovala výtvarnému umeniu a postupne prešla
+        rôznymi formami tvorby - od kresby, maľby, grafiky až po fotografiu.
+      </p>
+
+      <p>
+        Dnes prepájam umenie s arteterapiou a vytváram priestor, kde sa ľudia
+        môžu zastaviť, uvoľniť a objaviť svoju vlastnú kreativitu. Tvorba je
+        pre mňa spôsob vnímania života, cesta k hlbšiemu pochopeniu a návrat
+        k prirodzenosti.
+      </p>
+    </div>
   </div>
 </section>
 
+<!-- TVORBA -->
+<section id="work">
+  <div class="work-container">
+    <h2 class="work-title">Tvorba</h2>
+
+    <div class="work-content">
+      <p class="work-quote">
+        Tvorba je spôsob, ako sa vraciam k sebe.
+      </p>
+
+      <p class="work-sub">
+        Pracujem s materiálom, ktorý žije.<br>
+        Každý kus nesie svoj príbeh.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
 <section id="gallery" class="section">
-  <h2>Galéria</h2>
+  <div class="container">
+    <h2>Galéria</h2>
 
-  <div class="gallery">
-    <div class="gallery-item"><img src="images/art1.jpg"></div>
-    <div class="gallery-item"><img src="images/art2.jpg"></div>
-    <div class="gallery-item"><img src="images/art3.jpg"></div>
-    <div class="gallery-item"><img src="images/art4.jpg"></div>
+    <div class="gallery">
+      <div class="gallery-item"><img src="images/art1.jpg"></div>
+      <div class="gallery-item"><img src="images/art2.jpg"></div>
+      <div class="gallery-item"><img src="images/art3.jpg"></div>
+      <div class="gallery-item"><img src="images/art4.jpg"></div>
+      <div class="gallery-item"><img src="images/art5.jpg"></div>
+      <div class="gallery-item"><img src="images/art6.jpg"></div>
+      <div class="gallery-item"><img src="images/art_new_1.jpg"></div>
+      <div class="gallery-item"><img src="images/art_new_2.jpg"></div>
+      <div class="gallery-item"><img src="images/art_new_3.jpg"></div>
+    </div>
   </div>
 </section>
 
+<!-- KURZY -->
 <section id="courses" class="section">
-  <h2>Kurzy</h2>
-  <p>
-    Vytváram priestor, kde môžeš spomaliť, tvoriť a byť sám sebou.
-  </p>
+  <div class="container">
+    <h2>Kurzy</h2>
 
-  <ul class="courses-list">
-    <li>Maľovanie ako terapia</li>
-    <li>Osobná mandala</li>
-    <li>Kurzy pre deti a rodičov</li>
-    <li>Kreatívne dielne pre seniorov</li>
-    <li>Súkromné hodiny</li>
-  </ul>
+    <ul class="courses-list">
+      <li>Maľovanie ako terapia</li>
+      <li>Osobná mandala</li>
+      <li>Kurzy pre deti a rodičov</li>
+      <li>Kreatívne dielne pre seniorov</li>
+      <li>Súkromné hodiny</li>
+    </ul>
+  </div>
 </section>
 
+<!-- KONTAKT -->
 <section id="contact" class="section">
-  <h2>Kontakt</h2>
-  <p>Karolína Hodas</p>
-  <p>+421 944 388 697</p>
-  <p>WhatsApp: +41 78 326 35 56</p>
+  <div class="container">
+    <h2>Kontakt</h2>
+    <p>Karolína Hodas</p>
+    <p>+421 944 388 697</p>
+    <p>WhatsApp: +41 78 326 35 56</p>
+  </div>
 </section>
 
 <footer>
   <p>© Karolína Hodas</p>
 </footer>
+
+<!-- JS: hide navbar on scroll -->
+<script>
+let lastScroll = 0;
+const navbar = document.getElementById("navbar");
+
+window.addEventListener("scroll", () => {
+  const currentScroll = window.pageYOffset;
+
+  // ak si úplne hore → vždy ukáž navbar
+  if (currentScroll <= 50) {
+    navbar.classList.remove("hidden");
+    return;
+  }
+
+  // scroll dole → skry
+  if (currentScroll > lastScroll) {
+    navbar.classList.add("hidden");
+  } 
+  // scroll hore → ukáž
+  else {
+    navbar.classList.remove("hidden");
+  }
+
+  lastScroll = currentScroll;
+});
+</script>
 
 </body>
 </html>
