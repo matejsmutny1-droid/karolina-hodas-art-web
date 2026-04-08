@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karolína Hodas Art</title>
+
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f4efe7;
+      color: #1a1a1a;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.8;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      display: flex;
+      justify-content: space-between;
+      padding: 30px 80px;
+      background: rgba(244, 239, 231, 0.6);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      letter-spacing: 1.5px;
+    }
+
+    .navbar a {
+      margin-left: 40px;
+      text-decoration: none;
+      color: #1a1a1a;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      opacity: 0.8;
+      transition: all 0.3s;
+    }
+
+    .navbar a:hover {
+      opacity: 1;
+    }
+
+    /* HERO */
+    .hero {
+      height: 100vh;
+      background:
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url('images/hero.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.8rem;
+      color: white;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      color: rgba(255,255,255,0.85);
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+    }
+
+    /* SECTIONS */
+    .section {
+      padding: 180px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 40px;
+      letter-spacing: 1px;
+    }
+
+    .section p {
+      max-width: 600px;
+      font-size: 1.05rem;
+      color: #444;
+    }
+
+    /* TVORBA */
+    .dark {
+      background: #1a1a1a;
+      color: #eee;
+      padding: 120px 80px;
+      margin-top: 80px;
+    }
+
+    .dark h2 {
+      letter-spacing: 1px;
+    }
+
+    .dark p {
+      color: rgba(255,255,255,0.8);
+    }
+
+    /* GALERIA */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-top: 80px;
+    }
+
+    .gallery-item {
+      background: #f8f5ef;
+      padding: 20px;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* COURSES */
+    .courses-list {
+      margin-top: 40px;
+      list-style: none;
+    }
+
+    .courses-list li {
+      margin-bottom: 15px;
+      padding-left: 20px;
+      position: relative;
+      letter-spacing: 0.5px;
+    }
+
+    .courses-list li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+    }
+
+    /* CONTACT */
+    #contact p {
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 80px 20px;
+      font-size: 0.8rem;
+      color: #777;
+      letter-spacing: 1px;
+    }
+
+  </style>
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">Karolína Hodas</div>
+  <nav>
+    <a href="#about">O mne</a>
+    <a href="#work">Tvorba</a>
+    <a href="#gallery">Galéria</a>
+    <a href="#courses">Kurzy</a>
+    <a href="#contact">Kontakt</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>Umenie ako cesta k sebe</h1>
+    <p>Tvorba, ktorá spomaľuje, otvára a prepája</p>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <h2>O mne</h2>
+  <p>
+    K umeniu som mala blízko od detstva. Vyrastala som v prostredí slobody,
+    tvorivosti a lásky. Dnes prepájam umenie s arteterapiou a pomáham ľuďom
+    objavovať ich vlastnú kreativitu a vnútorný pokoj.
+  </p>
+</section>
+
+<section id="work" class="section">
+  <div class="dark">
+    <h2>Tvorba</h2>
+    <p>
+      Pracujem s prírodnými materiálmi a tvorba je pre mňa dialóg medzi
+      materiálom, emóciou a momentom.
+    </p>
+  </div>
+</section>
+
+<section id="gallery" class="section">
+  <h2>Galéria</h2>
+
+  <div class="gallery">
+    <div class="gallery-item"><img src="images/art1.jpg"></div>
+    <div class="gallery-item"><img src="images/art2.jpg"></div>
+    <div class="gallery-item"><img src="images/art3.jpg"></div>
+    <div class="gallery-item"><img src="images/art4.jpg"></div>
+  </div>
+</section>
+
+<section id="courses" class="section">
+  <h2>Kurzy</h2>
+  <p>
+    Vytváram priestor, kde môžeš spomaliť, tvoriť a byť sám sebou.
+  </p>
+
+  <ul class="courses-list">
+    <li>Maľovanie ako terapia</li>
+    <li>Osobná mandala</li>
+    <li>Kurzy pre deti a rodičov</li>
+    <li>Kreatívne dielne pre seniorov</li>
+    <li>Súkromné hodiny</li>
+  </ul>
+</section>
+
+<section id="contact" class="section">
+  <h2>Kontakt</h2>
+  <p>Karolína Hodas</p>
+  <p>+421 944 388 697</p>
+  <p>WhatsApp: +41 78 326 35 56</p>
+</section>
+
+<footer>
+  <p>© Karolína Hodas</p>
+</footer>
+
+</body>
+</html>
