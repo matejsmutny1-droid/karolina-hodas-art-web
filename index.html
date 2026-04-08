@@ -19,6 +19,7 @@
       color: #1a1a1a;
       font-family: 'Raleway', sans-serif;
       line-height: 1.8;
+      scroll-behavior: smooth;
     }
 
     /* NAVBAR */
@@ -179,10 +180,43 @@
       font-size: 1rem;
     }
 
+    .courses-list a {
+      text-decoration: none;
+      color: #1a1a1a;
+      transition: opacity 0.3s;
+    }
+
+    .courses-list a:hover {
+      opacity: 0.5;
+    }
+
     /* CONTACT */
     #contact p {
       text-align: center;
       margin-bottom: 10px;
+    }
+
+    .contact-buttons {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border: 1px solid #1a1a1a;
+      text-decoration: none;
+      color: #1a1a1a;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #1a1a1a;
+      color: #fff;
     }
 
     /* FOOTER */
@@ -191,6 +225,18 @@
       padding: 80px 20px;
       font-size: 0.8rem;
       color: #777;
+    }
+
+    /* ANIMATIONS */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* RESPONSIVE */
@@ -205,6 +251,25 @@
 
       .navbar {
         padding: 20px;
+      }
+
+      .navbar nav {
+        display: none;
+      }
+    }
+
+    @media(max-width: 600px){
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .contact-buttons {
+        flex-direction: column;
       }
     }
 
@@ -225,15 +290,14 @@
 </header>
 
 <section class="hero">
-  <h1>Umenie ako cesta k sebe</h1>
+  <h1 class="fade-up">Umenie ako cesta k sebe</h1>
 </section>
 
-<!-- O MNE -->
 <section id="about" class="section">
   <div class="container">
-    <h2>O mne</h2>
+    <h2 class="fade-up">O mne</h2>
 
-    <div class="bio">
+    <div class="bio fade-up">
       <p>
         K umeniu som bola vedená od detstva. Vyrastala som v prostredí slobody,
         tvorivosti a lásky, ktoré formovalo môj vzťah k svetu aj k sebe samej.
@@ -251,12 +315,11 @@
   </div>
 </section>
 
-<!-- TVORBA -->
 <section id="work">
   <div class="work-container">
-    <h2 class="work-title">Tvorba</h2>
+    <h2 class="work-title fade-up">Tvorba</h2>
 
-    <div class="work-content">
+    <div class="work-content fade-up">
       <p class="work-quote">
         Tvorba je spôsob, ako sa vraciam k sebe.
       </p>
@@ -269,12 +332,11 @@
   </div>
 </section>
 
-<!-- GALERIA -->
 <section id="gallery" class="section">
   <div class="container">
-    <h2>Galéria</h2>
+    <h2 class="fade-up">Galéria</h2>
 
-    <div class="gallery">
+    <div class="gallery fade-up">
       <div class="gallery-item"><img src="images/art1.jpg"></div>
       <div class="gallery-item"><img src="images/art2.jpg"></div>
       <div class="gallery-item"><img src="images/art3.jpg"></div>
@@ -288,28 +350,32 @@
   </div>
 </section>
 
-<!-- KURZY -->
 <section id="courses" class="section">
   <div class="container">
-    <h2>Kurzy</h2>
+    <h2 class="fade-up">Kurzy</h2>
 
-    <ul class="courses-list">
-      <li>Maľovanie ako terapia</li>
-      <li>Osobná mandala</li>
-      <li>Kurzy pre deti a rodičov</li>
-      <li>Kreatívne dielne pre seniorov</li>
-      <li>Súkromné hodiny</li>
+    <ul class="courses-list fade-up">
+      <li><a href="kurz-dusi-blizko.html">Maľovanie ako terapia</a></li>
+      <li><a href="kurz-mandala.html">Osobná mandala</a></li>
+      <li><a href="kurz-deti.html">Kurzy pre deti a rodičov</a></li>
+      <li><a href="kurz-seniori.html">Kreatívne dielne pre seniorov</a></li>
+      <li><a href="kurz-sukromne.html">Súkromné hodiny</a></li>
     </ul>
   </div>
 </section>
 
-<!-- KONTAKT -->
 <section id="contact" class="section">
-  <div class="container">
+  <div class="container fade-up">
     <h2>Kontakt</h2>
+
     <p>Karolína Hodas</p>
-    <p>+421 944 388 697</p>
-    <p>WhatsApp: +41 78 326 35 56</p>
+
+    <div class="contact-buttons">
+      <a href="mailto:karolina@email.com" class="btn">Email</a>
+      <a href="https://wa.me/41783263556" class="btn">WhatsApp</a>
+    </div>
+
+    <p style="margin-top:20px;">+421 944 388 697</p>
   </div>
 </section>
 
@@ -317,7 +383,6 @@
   <p>© Karolína Hodas</p>
 </footer>
 
-<!-- JS: hide navbar on scroll -->
 <script>
 let lastScroll = 0;
 const navbar = document.getElementById("navbar");
@@ -325,23 +390,35 @@ const navbar = document.getElementById("navbar");
 window.addEventListener("scroll", () => {
   const currentScroll = window.pageYOffset;
 
-  // ak si úplne hore → vždy ukáž navbar
   if (currentScroll <= 50) {
     navbar.classList.remove("hidden");
     return;
   }
 
-  // scroll dole → skry
   if (currentScroll > lastScroll) {
     navbar.classList.add("hidden");
-  } 
-  // scroll hore → ukáž
-  else {
+  } else {
     navbar.classList.remove("hidden");
   }
 
   lastScroll = currentScroll;
 });
+</script>
+
+<script>
+const elements = document.querySelectorAll('.fade-up');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+elements.forEach(el => observer.observe(el));
 </script>
 
 </body>

@@ -81,3 +81,74 @@ footer {
   padding: 40px;
   font-size: 0.9rem;
 }
+/* RESPONSIVE */
+@media(max-width: 900px){
+
+  .navbar {
+    padding: 20px;
+  }
+
+  .navbar nav {
+    display: none; /* zatiaľ schováme menu (clean riešenie) */
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+    padding: 0 20px;
+  }
+
+  .section {
+    padding: 100px 20px;
+  }
+
+  .section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+  }
+
+  .bio {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .bio p {
+    font-size: 0.95rem;
+  }
+
+  .work-title {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+  }
+
+  .work-content {
+    margin-left: 0;
+  }
+
+  .work-quote {
+    font-size: 1.3rem;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .gallery-item {
+    padding: 10px;
+  }
+
+  .courses-list li {
+    font-size: 0.95rem;
+  }
+}
+/* ANIMATIONS */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
