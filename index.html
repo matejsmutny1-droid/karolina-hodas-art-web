@@ -134,9 +134,10 @@
     }
 
     .work-content {
-      max-width: 500px;
-      margin-left: auto;
-    }
+  max-width: 520px;
+  margin-left: auto;
+  text-align: left; /* 👈 späť na left */
+}
 
     .work-quote {
       font-size: 1.8rem;
@@ -300,6 +301,99 @@
     line-height: 1.3;
   }
 }
+.exhibitions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.exhibitions-block p {
+  margin-bottom: 25px;
+  color: #444;
+  line-height: 1.6;
+}
+
+.ex-title {
+  font-weight: 500;
+  margin-bottom: 30px;
+  color: #111;
+}
+@media(max-width: 800px){
+  .exhibitions {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+.exhibitions {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  text-align: center;
+}
+
+.ex-item p {
+  color: #444;
+  line-height: 1.6;
+}
+
+.ex-year {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.ex-divider {
+  width: 60px;
+  height: 1px;
+  background: #ccc;
+  margin: 20px auto;
+}
+.work-container {
+  position: relative;
+}
+
+.work-visual {
+  position: absolute;
+  left: 0;
+  top: 70%; /* 🔥 ešte nižšie */
+  transform: translateY(-50%);
+  width: 420px;
+}
+
+.work-visual img {
+  width: 100%;
+  height: auto;
+}
+@media(max-width: 900px){
+  .work-visual {
+    position: static;
+    transform: none;
+    margin: 0 auto 40px auto;
+    width: 200px;
+    text-align: center;
+  }
+}
+@media(max-width: 900px){
+  .work-visual {
+    position: static;
+    transform: none;
+    margin: 0 auto 40px auto;
+    width: 200px;
+    text-align: center;
+  }
+}
+.work-text {
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.8;
+  letter-spacing: 0.2px;
+  hyphens: auto; /* 🔥 toto je gamechanger */
+}
 
   </style>
 </head>
@@ -311,8 +405,9 @@
   <nav>
     <a href="#about">O mne</a>
     <a href="#work">Tvorba</a>
-    <a href="#gallery">Galéria</a>
     <a href="#courses">Kurzy</a>
+    <a href="#gallery">Galéria</a>
+    <a href="#exhibitions">Výstavy</a>
     <a href="#contact">Kontakt</a>
   </nav>
 </header>
@@ -321,6 +416,7 @@
   <h1 class="fade-up">Umenie ako cesta k sebe</h1>
 </section>
 
+<!-- O MNE -->
 <section id="about" class="section">
   <div class="container">
     <h2 class="fade-up">O mne</h2>
@@ -328,38 +424,64 @@
     <div class="bio fade-up">
       <p>
         K umeniu som bola vedená od detstva. Vyrastala som v prostredí slobody,
-        tvorivosti a lásky, ktoré formovalo môj vzťah k svetu aj k sebe samej.
-        Už od útleho veku som sa venovala výtvarnému umeniu a postupne prešla
-        rôznymi formami tvorby - od kresby, maľby, grafiky až po fotografiu.
-      </p>
-
-      <p>
-        Dnes prepájam umenie s arteterapiou a vytváram priestor, kde sa ľudia
-        môžu zastaviť, uvoľniť a objaviť svoju vlastnú kreativitu. Tvorba je
-        pre mňa spôsob vnímania života, cesta k hlbšiemu pochopeniu a návrat
-        k prirodzenosti.
+        tvorivosti a lásky, ktoré formovalo môj vzťah k svetu aj k sebe samej
+        a tvorba sa pre mňa stala prirodzenou súčasťou života. Študovala som
+        grafiku, dejiny umenia a arteterapiu, V minulosti som pôsobila ako
+        pedagogička a lektorka výtvarného odboru pre deti a mládež a dnes,
+        okrem autorskej tvorby, vediem kurzy pre dospelých a seniorov.
       </p>
     </div>
   </div>
 </section>
 
+<!-- TVORBA -->
 <section id="work">
   <div class="work-container">
-    <h2 class="work-title fade-up">Tvorba</h2>
+
+  <div class="work-visual">
+    <img src="images/art-feature.png" alt="art">
+  </div>
+
+  <h2 class="work-title fade-up">Tvorba</h2>
+
+  <div class="work-content fade-up">
 
     <div class="work-content fade-up">
       <p class="work-quote">
-        Tvorba je spôsob, ako sa vraciam k sebe.
+        Umenie pre mňa nie je len estetickým vyjadrením. Je priestorom pre slobodu,
+        radosť, sebavyjadrenie a hlbšie vnímanie seba a sveta.
       </p>
 
-      <p class="work-sub">
-        Pracujem s materiálom, ktorý žije.<br>
-        Každý kus nesie svoj príbeh.
+      <p class="work-text">
+        V mojej tvorbe sa v priebehu rokov striedali rôzne techniky - od kresby
+        cez keramiku a grafiku až po fotografiu. Dnes sa sústreďujem najmä na
+        maľbu na drevo. Fascinuje ma jeho prirodzená premena. Každý kus dreva má
+        svoju štruktúru, farbu aj vôňu. V tvorivom procese sa snažím tieto
+        prirodzené kvality citlivo dopĺňať, najčastejšie pomocou akrylu či tušu,
+        no rada experimentujem aj s inými materiálmi a technikami. Moje diela
+        hovoria o zázraku každodenného života, vnútornom svete, o nepodmienenej
+        láske a vzťahu človek-príroda.
       </p>
     </div>
   </div>
 </section>
 
+<!-- KURZY -->
+<section id="courses" class="section">
+  <div class="container">
+    <h2 class="fade-up">Kurzy</h2>
+
+    <ul class="courses-list fade-up">
+      <li><a href="kurz-dusi-blizko.html">Maľovanie ako terapia</a></li>
+      <li><a href="kurz-mandala.html">Osobná mandala</a></li>
+      <li><a href="kurz-deti.html">Kurzy pre deti a rodičov</a></li>
+      <li><a href="kurz-seniori.html">Kreatívne dielne pre seniorov</a></li>
+      <li><a href="kurz-sukromne.html">Súkromné hodiny</a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- GALERIA -->
 <section id="gallery" class="section">
   <div class="container">
     <h2 class="fade-up">Galéria</h2>
@@ -378,32 +500,66 @@
   </div>
 </section>
 
-<section id="courses" class="section">
+<!-- VÝSTAVY -->
+<section id="exhibitions" class="section">
   <div class="container">
-    <h2 class="fade-up">Kurzy</h2>
+    <h2 class="fade-up">Výstavy</h2>
 
-    <ul class="courses-list fade-up">
-      <li><a href="kurz-dusi-blizko.html">Maľovanie ako terapia</a></li>
-      <li><a href="kurz-mandala.html">Osobná mandala</a></li>
-      <li><a href="kurz-deti.html">Kurzy pre deti a rodičov</a></li>
-      <li><a href="kurz-seniori.html">Kreatívne dielne pre seniorov</a></li>
-      <li><a href="kurz-sukromne.html">Súkromné hodiny</a></li>
-    </ul>
+    <div class="exhibitions fade-up">
+
+      <div class="ex-item">
+        <span class="ex-year">2025</span>
+        <p>"RASTIEME SPOLU"<br>
+        samostatná výstava<br>
+        Galéria Tri steny, Žilina</p>
+      </div>
+
+      <div class="ex-item">
+        <span class="ex-year">2019</span>
+        <p>"111 KÚSKOV LÁSKY"<br>
+        samostatná výstava<br>
+        Art Studio Z, Žilina</p>
+      </div>
+
+      <div class="ex-item">
+        <span class="ex-year">2014</span>
+        <p>"TO SME MY"<br>
+        kolektívna výstava<br>
+        Považská galéria umenia, Žilina</p>
+      </div>
+
+      <div class="ex-divider"></div>
+
+      <div class="ex-item">
+        <span class="ex-year">2026</span>
+        <p>28–28.11<br>
+        OPEN ART FEST<br>
+        Praha, Česká republika</p>
+      </div>
+
+      <div class="ex-item">
+        <span class="ex-year">2027</span>
+        <p>12.–13.6<br>
+        OPEN ART FEST<br>
+        Viedeň, Rakúsko</p>
+      </div>
+
+    </div>
   </div>
 </section>
 
+<!-- KONTAKT -->
 <section id="contact" class="section">
   <div class="container fade-up">
     <h2>Kontakt</h2>
 
     <p>Karolína Hodas</p>
+    <p>+421 944 388 697</p>
 
     <div class="contact-buttons">
       <a href="mailto:karolina@email.com" class="btn">Email</a>
       <a href="https://wa.me/41783263556" class="btn">WhatsApp</a>
     </div>
-
-    <p style="margin-top:20px;">+421 944 388 697</p>
   </div>
 </section>
 
