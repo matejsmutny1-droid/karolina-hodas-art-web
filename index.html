@@ -424,6 +424,37 @@
     transform: none;
   }
 }
+.phone {
+  color: #1a1a1a; /* alebo white ak chceš */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.phone:hover {
+  opacity: 0.6;
+}
+@media(max-width: 800px){
+
+  .work-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .work-image {
+    order: 2;
+    margin-top: 40px;
+  }
+
+  .work-content {
+    order: 1;
+    text-align: center;
+  }
+
+  .work-title {
+    text-align: center;
+  }
+}
   </style>
 </head>
 
@@ -600,7 +631,9 @@
     <h2>Kontakt</h2>
 
     <p>Karolína Hodas</p>
-    <p>+421 944 388 697</p>
+    <p style="margin-top:10px;">
+  <a href="tel:+421944388697" class="phone">+421 944 388 697</a>
+</p>
 
     <div class="contact-buttons">
       <a href="mailto:karolina@email.com" class="btn">Email</a>
