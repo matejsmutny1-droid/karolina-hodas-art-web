@@ -154,11 +154,11 @@
 
     /* GALERIA */
     .gallery {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
-      margin-top: 80px;
-    }
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 80px;
+}
 
     .gallery-item {
       background: #f8f5ef;
@@ -394,13 +394,37 @@
   letter-spacing: 0.2px;
   hyphens: auto; /* 🔥 toto je gamechanger */
 }
+/* PANORAMA SUPPORT */
+.gallery-item.wide {
+  grid-column: span 3;
+}
 
+.gallery-item.medium {
+  grid-column: span 2;
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media(max-width: 800px){
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-item.wide,
+  .gallery-item.medium {
+    grid-column: span 1;
+  }
+}
   </style>
 </head>
 
 <body>
 
 <header class="navbar" id="navbar">
+  
   <div class="logo">Karolína Hodas</div>
   <nav>
     <a href="#about">O mne</a>
@@ -472,9 +496,9 @@
     <h2 class="fade-up">Kurzy</h2>
 
     <ul class="courses-list fade-up">
-      <li><a href="kurz-dusi-blizko.html">Maľovanie ako terapia</a></li>
+      <li><a href="kurz-dusi-blizko.html">DUŠI BLÍZKO - Maľovanie ako terapia</a></li>
       <li><a href="kurz-mandala.html">Osobná mandala</a></li>
-      <li><a href="kurz-deti.html">Kurzy pre deti a rodičov</a></li>
+      <li><a href="kurz-deti.html">Detská kresba pre malých aj veľkých</a></li>
       <li><a href="kurz-seniori.html">Kreatívne dielne pre seniorov</a></li>
       <li><a href="kurz-sukromne.html">Súkromné hodiny</a></li>
     </ul>
@@ -482,20 +506,36 @@
 </section>
 
 <!-- GALERIA -->
-<section id="gallery" class="section">
+<<section id="gallery" class="section">
   <div class="container">
     <h2 class="fade-up">Galéria</h2>
 
     <div class="gallery fade-up">
+
       <div class="gallery-item"><img src="images/art1.jpg"></div>
       <div class="gallery-item"><img src="images/art2.jpg"></div>
       <div class="gallery-item"><img src="images/art3.jpg"></div>
+
+      <!-- PANORAMA -->
+      <div class="gallery-item wide">
+        <img src="images/panorama1.jpg">
+      </div>
+
       <div class="gallery-item"><img src="images/art4.jpg"></div>
       <div class="gallery-item"><img src="images/art5.jpg"></div>
       <div class="gallery-item"><img src="images/art6.jpg"></div>
+
+      <!-- PANORAMA -->
+      <div class="gallery-item wide">
+        <img src="images/panorama2.jpg">
+      </div>
+
       <div class="gallery-item"><img src="images/art_new_1.jpg"></div>
       <div class="gallery-item"><img src="images/art_new_2.jpg"></div>
       <div class="gallery-item"><img src="images/art_new_3.jpg"></div>
+      <div class="gallery-item"><img src="images/art_new_4.jpg"></div>
+      <div class="gallery-item"><img src="images/art_new_5.jpg"></div>
+
     </div>
   </div>
 </section>
