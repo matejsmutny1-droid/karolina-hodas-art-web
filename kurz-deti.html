@@ -1,460 +1,245 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Karolína Hodas</title>
+<title>Detská kresba pre malých aj veľkých</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-  background:#f6f1ea;
-  color:#161616;
-  font-family:'Inter',sans-serif;
-  overflow-x:hidden;
+background:#f4f0e8;
+font-family:'Plus Jakarta Sans',sans-serif;
+color:#171717;
+-webkit-font-smoothing:antialiased;
 }
 
-/* =========================
-NAVBAR
-========================= */
-
-.navbar{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  z-index:999;
-  padding:30px 60px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  transition:0.4s ease;
-  backdrop-filter:blur(12px);
-  background:rgba(246,241,234,0.7);
+.page{
+max-width:980px;
+margin:auto;
+padding:80px 28px 120px 28px;
 }
 
-.navbar.scrolled{
-  padding:20px 60px;
-  background:rgba(246,241,234,0.92);
+.back{
+display:inline-flex;
+align-items:center;
+gap:10px;
+text-decoration:none;
+color:#7d786f;
+font-size:0.78rem;
+font-weight:700;
+letter-spacing:2px;
+text-transform:uppercase;
+margin-bottom:70px;
+transition:0.3s ease;
 }
 
-.logo{
-  font-family:'Cormorant Garamond',serif;
-  font-size:2rem;
-  letter-spacing:1px;
+.back:hover{
+opacity:0.55;
 }
-
-.nav-links{
-  display:flex;
-  gap:35px;
-}
-
-.nav-links a{
-  text-decoration:none;
-  color:#222;
-  font-size:0.8rem;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  opacity:0.75;
-  transition:0.3s;
-}
-
-.nav-links a:hover{
-  opacity:1;
-}
-
-/* =========================
-HERO
-========================= */
 
 .hero{
-  height:100vh;
-  position:relative;
-  overflow:hidden;
+margin-bottom:80px;
 }
 
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.22);
+.eyebrow{
+font-size:0.72rem;
+font-weight:700;
+letter-spacing:2px;
+text-transform:uppercase;
+opacity:0.45;
+margin-bottom:24px;
 }
 
-.hero img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+h1{
+font-size:4.8rem;
+line-height:0.92;
+font-weight:800;
+letter-spacing:-5px;
+max-width:900px;
+margin-bottom:35px;
 }
 
-.hero-content{
-  position:absolute;
-  inset:0;
-  z-index:2;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:20px;
+.meta{
+font-size:1rem;
+line-height:2;
+color:#5f5a52;
+max-width:520px;
 }
 
-.hero-content h1{
-  color:white;
-  font-family:'Cormorant Garamond',serif;
-  font-size:5rem;
-  font-weight:500;
-  max-width:900px;
-  line-height:1.05;
+.content-grid{
+display:grid;
+grid-template-columns:1fr 340px;
+gap:70px;
+align-items:start;
 }
 
-/* =========================
-SECTIONS
-========================= */
+.main-content{
+display:flex;
+flex-direction:column;
+gap:45px;
+}
 
 .section{
-  padding:140px 40px;
+padding-bottom:40px;
+border-bottom:1px solid rgba(0,0,0,0.08);
 }
 
-.container{
-  max-width:1300px;
-  margin:auto;
+.label{
+font-size:0.72rem;
+font-weight:700;
+letter-spacing:2px;
+text-transform:uppercase;
+opacity:0.45;
+margin-bottom:18px;
 }
 
-.section-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:4rem;
-  margin-bottom:80px;
-  font-weight:500;
-  text-align:center;
+.text{
+font-size:1.08rem;
+line-height:2;
+color:#2d2d2d;
 }
 
-/* =========================
-ABOUT
-========================= */
-
-.about{
-  max-width:820px;
-  margin:auto;
-  text-align:center;
+.note{
+font-size:1.15rem;
+line-height:1.8;
+font-weight:500;
+color:#1a1a1a;
 }
 
-.about p{
-  font-size:1.08rem;
-  line-height:2;
-  color:#444;
+.side-card{
+position:sticky;
+top:120px;
+background:rgba(255,255,255,0.55);
+backdrop-filter:blur(10px);
+border:1px solid rgba(0,0,0,0.08);
+border-radius:30px;
+padding:38px;
 }
 
-/* =========================
-WORK
-========================= */
-
-.work-grid{
-  display:grid;
-  grid-template-columns:1.1fr 1fr;
-  gap:90px;
-  align-items:center;
+.price{
+font-size:3rem;
+font-weight:800;
+letter-spacing:-3px;
+margin-bottom:10px;
 }
 
-.work-grid img{
-  width:100%;
-  border-radius:2px;
+.price-meta{
+font-size:0.82rem;
+letter-spacing:2px;
+text-transform:uppercase;
+opacity:0.45;
+margin-bottom:35px;
 }
 
-.work-text h3{
-  font-family:'Cormorant Garamond',serif;
-  font-size:3rem;
-  margin-bottom:30px;
-  font-weight:500;
+.includes{
+padding-top:30px;
+border-top:1px solid rgba(0,0,0,0.08);
 }
 
-.work-text p{
-  line-height:2;
-  color:#444;
+.includes ul{
+list-style:none;
+display:flex;
+flex-direction:column;
+gap:16px;
 }
 
-/* =========================
-GALLERY
-========================= */
-
-.gallery-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:30px;
+.includes li{
+font-size:0.98rem;
+line-height:1.7;
+color:#3b3b3b;
+position:relative;
+padding-left:22px;
 }
 
-.art-card{
-  cursor:pointer;
-  transition:0.4s ease;
+.includes li::before{
+content:"•";
+position:absolute;
+left:0;
+top:0;
+opacity:0.45;
 }
 
-.art-card:hover{
-  transform:translateY(-8px);
+.cta{
+display:inline-flex;
+justify-content:center;
+align-items:center;
+width:100%;
+margin-top:38px;
+padding:18px 24px;
+border-radius:18px;
+background:#171717;
+color:white;
+text-decoration:none;
+font-size:0.76rem;
+font-weight:700;
+letter-spacing:2px;
+text-transform:uppercase;
+transition:0.3s ease;
 }
 
-.art-image{
-  aspect-ratio:1/1.1;
-  overflow:hidden;
-  background:#ddd;
+.cta:hover{
+transform:translateY(-2px);
+opacity:0.92;
 }
 
-.art-image img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:0.7s ease;
+@media(max-width:900px){
+
+h1{
+font-size:3.3rem;
+letter-spacing:-3px;
 }
 
-.art-card:hover img{
-  transform:scale(1.04);
+.content-grid{
+grid-template-columns:1fr;
+gap:50px;
 }
 
-.art-info{
-  padding-top:20px;
+.side-card{
+position:relative;
+top:auto;
 }
-
-.art-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:2rem;
-  margin-bottom:8px;
-}
-
-.art-medium{
-  font-size:0.8rem;
-  letter-spacing:1px;
-  text-transform:uppercase;
-  color:#666;
-}
-
-.art-price{
-  margin-top:14px;
-  font-size:0.95rem;
-  color:#222;
-}
-
-/* =========================
-MODAL
-========================= */
-
-.modal{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.92);
-  z-index:5000;
-  display:none;
-  align-items:center;
-  justify-content:center;
-  padding:40px;
-}
-
-.modal.active{
-  display:flex;
-}
-
-.modal-content{
-  width:100%;
-  max-width:1400px;
-  display:grid;
-  grid-template-columns:1.2fr 0.8fr;
-  gap:60px;
-  align-items:center;
-}
-
-.modal-gallery img{
-  width:100%;
-  max-height:72vh;
-  object-fit:contain;
-}
-
-.thumbnail-row{
-  display:flex;
-  gap:12px;
-  margin-top:18px;
-}
-
-.thumbnail-row img{
-  width:90px;
-  height:90px;
-  object-fit:cover;
-  cursor:pointer;
-  opacity:0.5;
-  transition:0.3s;
-}
-
-.thumbnail-row img:hover{
-  opacity:1;
-}
-
-.modal-info{
-  color:white;
-}
-
-.modal-info h2{
-  font-family:'Cormorant Garamond',serif;
-  font-size:4rem;
-  margin-bottom:20px;
-  font-weight:500;
-}
-
-.modal-medium{
-  text-transform:uppercase;
-  letter-spacing:2px;
-  opacity:0.7;
-  font-size:0.8rem;
-  margin-bottom:25px;
-}
-
-.modal-price{
-  font-size:1.2rem;
-  margin-bottom:35px;
-}
-
-.modal-desc{
-  line-height:2;
-  opacity:0.85;
-  max-width:450px;
-}
-
-.close-modal{
-  position:absolute;
-  top:30px;
-  right:40px;
-  color:white;
-  font-size:3rem;
-  cursor:pointer;
-  font-weight:200;
-}
-
-/* =========================
-CONTACT
-========================= */
-
-.contact{
-  text-align:center;
-}
-
-.contact p{
-  margin-bottom:15px;
-  color:#444;
-}
-
-.contact-buttons{
-  margin-top:35px;
-  display:flex;
-  justify-content:center;
-  gap:15px;
-  flex-wrap:wrap;
-}
-
-.btn{
-  padding:14px 26px;
-  border:1px solid #111;
-  text-decoration:none;
-  color:#111;
-  transition:0.3s;
-  font-size:0.85rem;
-  letter-spacing:1px;
-}
-
-.btn:hover{
-  background:#111;
-  color:white;
-}
-
-/* =========================
-FOOTER
-========================= */
-
-footer{
-  padding:60px 20px;
-  text-align:center;
-  color:#777;
-  font-size:0.85rem;
-}
-
-/* =========================
-RESPONSIVE
-========================= */
-
-@media(max-width:1000px){
-
-  .gallery-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .work-grid{
-    grid-template-columns:1fr;
-  }
-
-  .modal-content{
-    grid-template-columns:1fr;
-  }
 
 }
 
-@media(max-width:700px){
+@media(max-width:600px){
 
-  .navbar{
-    padding:20px;
-  }
-
-  .nav-links{
-    display:none;
-  }
-
-  .hero-content h1{
-    font-size:2.8rem;
-  }
-
-  .section{
-    padding:90px 20px;
-  }
-
-  .section-title{
-    font-size:3rem;
-    margin-bottom:50px;
-  }
-
-  .gallery-grid{
-    grid-template-columns:1fr;
-  }
-
-  .modal{
-    padding:20px;
-    overflow-y:auto;
-  }
-
-  .modal-info h2{
-    font-size:2.8rem;
-  }
-
-  .thumbnail-row img{
-    width:70px;
-    height:70px;
-  }
-
+.page{
+padding:50px 22px 90px 22px;
 }
 
-.fade-up{
-  opacity:0;
-  transform:translateY(40px);
-  transition:1s ease;
+.back{
+margin-bottom:50px;
 }
 
-.fade-up.show{
-  opacity:1;
-  transform:translateY(0);
+h1{
+font-size:2.5rem;
+line-height:1;
+}
+
+.text{
+font-size:1rem;
+line-height:1.9;
+}
+
+.price{
+font-size:2.4rem;
+}
+
+.side-card{
+padding:30px;
+border-radius:24px;
+}
+
 }
 
 </style>
@@ -462,527 +247,117 @@ RESPONSIVE
 
 <body>
 
-<!-- =========================
-NAVBAR
-========================= -->
+<div class="page">
 
-<header class="navbar" id="navbar">
+<a href="index.html#courses" class="back">
+← späť ku kurzom
+</a>
 
-<div class="logo">Karolína Hodas</div>
+<div class="hero">
 
-<nav class="nav-links">
-<a href="#about">O mne</a>
-<a href="#work">Tvorba</a>
-<a href="#gallery">Galéria</a>
-<a href="#contact">Kontakt</a>
-</nav>
+<div class="eyebrow">
+Kurz
+</div>
 
-</header>
-
-<!-- =========================
-HERO
-========================= -->
-
-<section class="hero">
-
-<img src="images/hero.jpg" alt="">
-
-<div class="hero-content">
-<h1 class="fade-up">
-Umenie ako cesta k sebe
+<h1>
+DETSKÁ KRESBA PRE MALÝCH AJ VEĽKÝCH
 </h1>
-</div>
 
-</section>
-
-<!-- =========================
-ABOUT
-========================= -->
-
-<section id="about" class="section">
-
-<div class="container">
-
-<h2 class="section-title fade-up">O mne</h2>
-
-<div class="about fade-up">
-
-<p>
-K umeniu som bola vedená od detstva. Vyrastala som v prostredí slobody,
-tvorivosti a lásky, ktoré formovalo môj vzťah k svetu aj k sebe samej.
-Študovala som grafiku, dejiny umenia a arteterapiu. V minulosti som pôsobila
-ako pedagogička a lektorka výtvarného odboru pre deti a mládež a dnes,
-okrem autorskej tvorby, vediem kurzy pre dospelých a seniorov.
-</p>
-
+<div class="meta">
+sobota, nepravidelne alebo na objednávku<br><br>
+Art Studio Z, Žilina
 </div>
 
 </div>
 
-</section>
+<div class="content-grid">
 
-<!-- =========================
-WORK
-========================= -->
+<div class="main-content">
 
-<section id="work" class="section">
+<div class="section">
 
-<div class="container">
-
-<div class="work-grid">
-
-<div class="fade-up">
-<img src="images/art-feature.jpg" alt="">
+<div class="label">
+Zameraný na
 </div>
 
-<div class="work-text fade-up">
+<div class="text">
+uvoľnenie, otvorenosť, hravosť, lepšie pochopenie a podporenie vzťahu s deťmi, oslobodzuje od predsudkov, posilňuje motorickú koordináciu a trpezlivosť, poskytuje relax a pocit zmysluplnosti
+</div>
 
-<h3>
-Tvorba
-</h3>
+</div>
 
-<p>
-V mojej tvorbe sa v priebehu rokov striedali rôzne techniky —
-od kresby cez keramiku a grafiku až po fotografiu.
-Dnes sa sústreďujem najmä na maľbu na drevo.
-Fascinuje ma jeho prirodzená štruktúra, vôňa a energia.
-Každý kus dreva nesie vlastný príbeh, ktorý sa snažím citlivo dopĺňať
-pomocou akrylu, tušu a ďalších materiálov.
-Moje diela hovoria o vnútornom svete, prírode,
-láske, slobode a hlbšom vnímaní života.
-</p>
+<div class="section">
 
+<div class="label">
+Dôležité
+</div>
+
+<div class="note">
+Nie sú potrebné žiadne predošlé výtvarné skúsenosti.
+</div>
+
+</div>
+
+<div class="section">
+
+<div class="label">
+Vhodný pre
+</div>
+
+<div class="text">
+dospelých a deti vo veku 3–10 rokov
+</div>
+
+</div>
+
+<div class="section">
+
+<div class="label">
+Nevhodný pre
+</div>
+
+<div class="text">
+dieťa bez dospelej osoby
 </div>
 
 </div>
 
 </div>
 
-</section>
+<div class="side-card">
 
-<!-- =========================
-GALLERY
-========================= -->
+<div class="price">
+15€
+</div>
 
-<section id="gallery" class="section">
+<div class="price-meta">
+60 minút
+</div>
 
-<div class="container">
+<div class="includes">
 
-<h2 class="section-title fade-up">Galéria</h2>
+<div class="label">
+V cene
+</div>
 
-<div class="gallery-grid" id="galleryGrid"></div>
+<ul>
+<li>Sprevádzanie skúsenou lektorkou</li>
+<li>Vytvorené dielo si môžete zobrať domov</li>
+<li>Všetky pomôcky</li>
+<li>Občerstvenie a voda / čaj / káva</li>
+</ul>
 
 </div>
 
-</section>
-
-<!-- =========================
-CONTACT
-========================= -->
-
-<section id="contact" class="section">
-
-<div class="container contact fade-up">
-
-<h2 class="section-title">Kontakt</h2>
-
-<p>Karolína Hodas</p>
-<p>+421 944 388 697</p>
-
-<div class="contact-buttons">
-
-<a href="mailto:karolina@email.com" class="btn">
-Email
-</a>
-
-<a href="https://wa.me/41783263556" class="btn">
-WhatsApp
+<a href="mailto:info@karolinart.com" class="cta">
+Rezervovať kurz
 </a>
 
 </div>
 
 </div>
 
-</section>
-
-<footer>
-© Karolína Hodas
-</footer>
-
-<!-- =========================
-MODAL
-========================= -->
-
-<div class="modal" id="modal">
-
-<div class="close-modal" id="closeModal">
-×
 </div>
-
-<div class="modal-content">
-
-<div class="modal-gallery">
-
-<img id="modalMainImage" src="" alt="">
-
-<div class="thumbnail-row" id="thumbnailRow"></div>
-
-</div>
-
-<div class="modal-info">
-
-<h2 id="modalTitle"></h2>
-
-<div class="modal-medium" id="modalMedium"></div>
-
-<div class="modal-price" id="modalPrice"></div>
-
-<div class="modal-desc" id="modalDesc">
-Každé dielo vzniká intuitívne ako spojenie prírodného materiálu,
-vnútorného prežívania a spontánneho tvorivého procesu.
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<script>
-
-/* =========================
-ARTWORK DATA
-========================= */
-
-const artworks = [
-
-{
-title:"OSVIETENIE",
-price:"180 €",
-medium:"Akryl a tuš na dreve",
-images:[
-"images/osvietenie-1.jpg",
-"images/osvietenie-2.jpg"
-]
-},
-
-{
-title:"LES",
-price:"130 €",
-medium:"Tuš na dreve",
-images:[
-"images/les-1.jpg",
-"images/les-2.jpg"
-]
-},
-
-{
-title:"CESTA",
-price:"150 €",
-medium:"Akryl a tuš na dreve",
-images:[
-"images/cesta-1.jpg",
-"images/cesta-2.jpg"
-]
-},
-
-{
-title:"LÁSKA",
-price:"150 €",
-medium:"Akryl a tuš na dreve",
-images:[
-"images/laska-1.jpg",
-"images/laska-2.jpg"
-]
-},
-
-{
-title:"PRÚDENIE ENERGIE",
-price:"150 €",
-medium:"Akryl a tuš na dreve",
-images:[
-"images/prudenie-1.jpg",
-"images/prudenie-2.jpg"
-]
-},
-
-{
-title:"SPOJENIE",
-price:"180 €",
-medium:"Akryl na dreve",
-images:[
-"images/spojenie-1.jpg",
-"images/spojenie-2.jpg"
-]
-},
-
-{
-title:"SNEH",
-price:"80 €",
-medium:"Akryl na dreve",
-images:[
-"images/sneh-1.jpg",
-"images/sneh-2.jpg"
-]
-},
-
-{
-title:"HRČA",
-price:"80 €",
-medium:"Akryl na dreve",
-images:[
-"images/hrca-1.jpg",
-"images/hrca-2.jpg"
-]
-},
-
-{
-title:"ZRKADLENIE",
-price:"80 €",
-medium:"Akryl a tuš na dreve",
-images:[
-"images/zrkadlenie-1.jpg",
-"images/zrkadlenie-2.jpg"
-]
-},
-
-{
-title:"ZÁZRAK ŽIVOTA",
-price:"80 €",
-medium:"Akryl a tuš na dreve",
-images:[
-"images/zazrak-zivota-1.jpg",
-"images/zazrak-zivota-2.jpg"
-]
-},
-
-{
-title:"MANDALA",
-price:"250 €",
-medium:"Akryl a tuš na dreve",
-images:[
-"images/mandala-1.jpg",
-"images/mandala-2.jpg"
-]
-},
-
-{
-title:"HORY",
-price:"250 €",
-medium:"Akryl na dreve",
-images:[
-"images/hory-1.jpg",
-"images/hory-2.jpg"
-]
-},
-
-{
-title:"FÉNIX",
-price:"50 €",
-medium:"Tuš na dreve",
-images:[
-"images/fenix-1.jpg",
-"images/fenix-2.jpg"
-]
-},
-
-{
-title:"SLOBODA",
-price:"30 €",
-medium:"Tuš na dreve",
-images:[
-"images/sloboda-1.jpg",
-"images/sloboda-2.jpg"
-]
-},
-
-{
-title:"NÁDYCH",
-price:"50 €",
-medium:"Tuš na dreve",
-images:[
-"images/nadych-1.jpg",
-"images/nadych-2.jpg"
-]
-},
-
-{
-title:"LOS",
-price:"30 €",
-medium:"Akryl a tuš na dreve",
-images:[
-"images/los-1.jpg",
-"images/los-2.jpg"
-]
-},
-
-{
-title:"RAST",
-price:"150 €",
-medium:"Akryl a tuš na dreve",
-images:[
-"images/rast-1.jpg",
-"images/rast-2.jpg"
-]
-},
-
-{
-title:"CHVÍĽA",
-price:"50 €",
-medium:"Akryl a tuš na dreve",
-images:[
-"images/chvila-1.jpg",
-"images/chvila-2.jpg"
-]
-},
-
-{
-title:"VODA",
-price:"30 €",
-medium:"Akryl na dreve",
-images:[
-"images/voda-1.jpg",
-"images/voda-2.jpg"
-]
-},
-
-{
-title:"ANJEL",
-price:"80 €",
-medium:"Akryl na dreve",
-images:[
-"images/anjel-1.jpg",
-"images/anjel-2.jpg"
-]
-}
-
-];
-
-/* =========================
-GENERATE GALLERY
-========================= */
-
-const galleryGrid = document.getElementById("galleryGrid");
-
-artworks.forEach((art,index)=>{
-
-const card = document.createElement("div");
-card.classList.add("art-card","fade-up");
-
-card.innerHTML = `
-<div class="art-image">
-<img src="${art.images[0]}" alt="">
-</div>
-
-<div class="art-info">
-<div class="art-title">${art.title}</div>
-<div class="art-medium">${art.medium}</div>
-<div class="art-price">${art.price}</div>
-</div>
-`;
-
-card.addEventListener("click",()=>openModal(index));
-
-galleryGrid.appendChild(card);
-
-});
-
-/* =========================
-MODAL
-========================= */
-
-const modal = document.getElementById("modal");
-const modalTitle = document.getElementById("modalTitle");
-const modalMedium = document.getElementById("modalMedium");
-const modalPrice = document.getElementById("modalPrice");
-const modalMainImage = document.getElementById("modalMainImage");
-const thumbnailRow = document.getElementById("thumbnailRow");
-
-function openModal(index){
-
-const art = artworks[index];
-
-modal.classList.add("active");
-
-modalTitle.textContent = art.title;
-modalMedium.textContent = art.medium;
-modalPrice.textContent = art.price;
-
-modalMainImage.src = art.images[0];
-
-thumbnailRow.innerHTML = "";
-
-art.images.forEach(img=>{
-
-const thumb = document.createElement("img");
-
-thumb.src = img;
-
-thumb.addEventListener("click",()=>{
-modalMainImage.src = img;
-});
-
-thumbnailRow.appendChild(thumb);
-
-});
-
-}
-
-document.getElementById("closeModal").addEventListener("click",()=>{
-modal.classList.remove("active");
-});
-
-modal.addEventListener("click",(e)=>{
-if(e.target === modal){
-modal.classList.remove("active");
-}
-});
-
-document.addEventListener("keydown",(e)=>{
-if(e.key === "Escape"){
-modal.classList.remove("active");
-}
-});
-
-/* =========================
-SCROLL NAVBAR
-========================= */
-
-window.addEventListener("scroll",()=>{
-
-const navbar = document.getElementById("navbar");
-
-if(window.scrollY > 50){
-navbar.classList.add("scrolled");
-}else{
-navbar.classList.remove("scrolled");
-}
-
-});
-
-/* =========================
-FADE UP
-========================= */
-
-const faders = document.querySelectorAll(".fade-up");
-
-const observer = new IntersectionObserver((entries)=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-entry.target.classList.add("show");
-}
-
-});
-
-},{
-threshold:0.1
-});
-
-faders.forEach(el=>observer.observe(el));
-
-</script>
 
 </body>
 </html>

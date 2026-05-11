@@ -234,6 +234,50 @@ grid-template-columns:repeat(3,1fr);
 gap:60px 34px;
 }
 
+/* COURSES */
+
+
+.courses-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:32px;
+max-width:1100px;
+margin:72px auto 0 auto;
+}
+
+.course-card{
+display:flex;
+align-items:center;
+justify-content:flex-start;
+min-height:110px;
+padding:20px 28px;
+border-radius:12px;
+text-decoration:none;
+text-align:left;
+font-size:1.05rem;
+font-weight:700;
+line-height:1.2;
+color:#111;
+background:rgba(255,255,255,0.65);
+border:1px solid rgba(17,17,17,0.06);
+transition:transform 260ms ease, box-shadow 260ms ease, background 260ms ease, border-color 260ms ease;
+backdrop-filter:blur(4px);
+box-shadow:0 6px 18px rgba(10,10,10,0.04);
+}
+
+.course-card:hover,
+.course-card:focus{
+transform:translateY(-6px);
+box-shadow:0 18px 38px rgba(10,10,10,0.06);
+border-color:rgba(17,17,17,0.12);
+background:rgba(255,255,255,0.8);
+outline:none;
+}
+
+.course-card .course-title{
+flex:1;
+}
+
 .art-card{
 cursor:pointer;
 transition:0.45s ease;
@@ -542,6 +586,20 @@ width:65px;
 height:65px;
 }
 
+/* COURSES (mobile overrides) */
+
+.courses-grid{
+grid-template-columns:1fr;
+gap:20px;
+margin-top:40px;
+}
+
+.course-card{
+min-height:92px;
+font-size:1rem;
+padding:16px 18px;
+}
+
 }
 
 </style>
@@ -674,27 +732,27 @@ Kurzy
 
 <div style="text-align:center; max-width:900px; margin:auto;">
 
-<div style="display:flex; flex-direction:column; gap:34px;">
+<div class="courses-grid">
 
-<a href="kurz-dusi-blizko.html" style="text-decoration:none; color:#222; font-size:1.25rem;">
-DUŠI BLÍZKO - Maľovanie ako terapia
-</a>
+  <a href="kurz-dusi-blizko.html" class="course-card">
+    DUŠI BLÍZKO - Maľovanie ako terapia
+  </a>
 
-<a href="kurz-mandala.html" style="text-decoration:none; color:#222; font-size:1.25rem;">
-Osobná mandala
-</a>
+  <a href="kurz-mandala.html" class="course-card">
+    Osobná mandala
+  </a>
 
-<a href="kurz-deti.html" style="text-decoration:none; color:#222; font-size:1.25rem;">
-Detská kresba pre malých aj veľkých
-</a>
+  <a href="kurz-deti.html" class="course-card">
+    Detská kresba pre malých aj veľkých
+  </a>
 
-<a href="kurz-seniori.html" style="text-decoration:none; color:#222; font-size:1.25rem;">
-Kreatívne dielne pre seniorov
-</a>
+  <a href="kurz-seniori.html" class="course-card">
+    Kreatívne dielne pre seniorov
+  </a>
 
-<a href="kurz-sukromne.html" style="text-decoration:none; color:#222; font-size:1.25rem;">
-Súkromné hodiny
-</a>
+  <a href="kurz-sukromne.html" class="course-card">
+    Súkromné hodiny
+  </a>
 
 </div>
 

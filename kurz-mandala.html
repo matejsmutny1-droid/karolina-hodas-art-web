@@ -1,142 +1,360 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kurz</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+<title>Osobná mandala</title>
 
-  <style>
-  body {
-    background: #f4efe7;
-    font-family: 'Raleway', sans-serif;
-    color: #1a1a1a;
-    margin: 0;
-    padding: 0;
-  }
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  .wrapper {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 80px 25px;
-  }
+<style>
 
-  .back {
-    display: inline-block;
-    margin-bottom: 60px;
-    text-decoration: none;
-    color: #999;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
-  }
-
-  h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    line-height: 1.2;
-    margin-bottom: 30px;
-  }
-
-  .meta {
-    margin-bottom: 50px;
-    color: #666;
-    font-size: 1rem;
-  }
-
-  .section {
-    margin-bottom: 40px;
-  }
-
-  .label {
-    font-weight: 500;
-    margin-bottom: 5px;
-  }
-
-  .text {
-    color: #444;
-    line-height: 1.7;
-  }
-
-  .highlight {
-    font-size: 1.2rem;
-    margin: 40px 0;
-  }
-
-  .box {
-    background: #fff;
-    padding: 30px;
-    margin-top: 30px;
-  }
-
-  @media(max-width: 600px){
-    h1 {
-      font-size: 2.2rem;
-    }
-
-    .wrapper {
-      padding: 60px 20px;
-    }
-  }
-  .box {
-  background: #fff;
-  padding: 30px;
-  margin-top: 30px;
-  border-radius: 6px;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
+
+body{
+background:#f4f0e8;
+font-family:'Plus Jakarta Sans',sans-serif;
+color:#171717;
+-webkit-font-smoothing:antialiased;
+}
+
+.page{
+max-width:980px;
+margin:auto;
+padding:80px 28px 120px 28px;
+}
+
+.back{
+display:inline-flex;
+align-items:center;
+gap:10px;
+text-decoration:none;
+color:#7d786f;
+font-size:0.78rem;
+font-weight:700;
+letter-spacing:2px;
+text-transform:uppercase;
+margin-bottom:70px;
+transition:0.3s ease;
+}
+
+.back:hover{
+opacity:0.55;
+}
+
+.hero{
+margin-bottom:80px;
+}
+
+.eyebrow{
+font-size:0.72rem;
+font-weight:700;
+letter-spacing:2px;
+text-transform:uppercase;
+opacity:0.45;
+margin-bottom:24px;
+}
+
+h1{
+font-size:4.6rem;
+line-height:0.92;
+font-weight:800;
+letter-spacing:-5px;
+max-width:900px;
+margin-bottom:35px;
+}
+
+.meta{
+font-size:1rem;
+line-height:2;
+color:#5f5a52;
+max-width:520px;
+}
+
+.content-grid{
+display:grid;
+grid-template-columns:1fr 340px;
+gap:70px;
+align-items:start;
+}
+
+.main-content{
+display:flex;
+flex-direction:column;
+gap:45px;
+}
+
+.section{
+padding-bottom:40px;
+border-bottom:1px solid rgba(0,0,0,0.08);
+}
+
+.label{
+font-size:0.72rem;
+font-weight:700;
+letter-spacing:2px;
+text-transform:uppercase;
+opacity:0.45;
+margin-bottom:18px;
+}
+
+.text{
+font-size:1.08rem;
+line-height:2;
+color:#2d2d2d;
+}
+
+.note{
+font-size:1.15rem;
+line-height:1.8;
+font-weight:500;
+color:#1a1a1a;
+}
+
+.side-card{
+position:sticky;
+top:120px;
+background:rgba(255,255,255,0.55);
+backdrop-filter:blur(10px);
+border:1px solid rgba(0,0,0,0.08);
+border-radius:30px;
+padding:38px;
+}
+
+.price{
+font-size:3rem;
+font-weight:800;
+letter-spacing:-3px;
+margin-bottom:10px;
+}
+
+.price-meta{
+font-size:0.82rem;
+letter-spacing:2px;
+text-transform:uppercase;
+opacity:0.45;
+margin-bottom:35px;
+}
+
+.includes{
+padding-top:30px;
+border-top:1px solid rgba(0,0,0,0.08);
+}
+
+.includes ul{
+list-style:none;
+display:flex;
+flex-direction:column;
+gap:16px;
+}
+
+.includes li{
+font-size:0.98rem;
+line-height:1.7;
+color:#3b3b3b;
+position:relative;
+padding-left:22px;
+}
+
+.includes li::before{
+content:"•";
+position:absolute;
+left:0;
+top:0;
+opacity:0.45;
+}
+
+.cta{
+display:inline-flex;
+justify-content:center;
+align-items:center;
+width:100%;
+margin-top:38px;
+padding:18px 24px;
+border-radius:18px;
+background:#171717;
+color:white;
+text-decoration:none;
+font-size:0.76rem;
+font-weight:700;
+letter-spacing:2px;
+text-transform:uppercase;
+transition:0.3s ease;
+}
+
+.cta:hover{
+transform:translateY(-2px);
+opacity:0.92;
+}
+
+@media(max-width:900px){
+
+h1{
+font-size:3.3rem;
+letter-spacing:-3px;
+}
+
+.content-grid{
+grid-template-columns:1fr;
+gap:50px;
+}
+
+.side-card{
+position:relative;
+top:auto;
+}
+
+}
+
+@media(max-width:600px){
+
+.page{
+padding:50px 22px 90px 22px;
+}
+
+.back{
+margin-bottom:50px;
+}
+
+h1{
+font-size:2.5rem;
+line-height:1;
+}
+
+.text{
+font-size:1rem;
+line-height:1.9;
+}
+
+.price{
+font-size:2.4rem;
+}
+
+.side-card{
+padding:30px;
+border-radius:24px;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="wrapper">
+<div class="page">
 
-<a href="index.html#courses" class="back">← späť</a>
+<a href="index.html#courses" class="back">
+← späť ku kurzom
+</a>
 
-<h1>OSOBNÁ MANDALA</h1>
+<div class="hero">
+
+<div class="eyebrow">
+Kurz
+</div>
+
+<h1>
+OSOBNÁ MANDALA
+</h1>
 
 <div class="meta">
-  každú STREDU 18:15–19:15<br>
-  Art Studio Z, Žilina
+každú STREDU 18:15–19:15<br><br>
+Art Studio Z, Žilina
+</div>
+
+</div>
+
+<div class="content-grid">
+
+<div class="main-content">
+
+<div class="section">
+
+<div class="label">
+Zameraný na
+</div>
+
+<div class="text">
+relax, harmonizáciu, spomalenie
+</div>
+
 </div>
 
 <div class="section">
-  <div class="label">Zameraný na</div>
-  <div class="text">
-    relax, harmonizáciu, spomalenie
-  </div>
+
+<div class="label">
+Podporuje
+</div>
+
+<div class="text">
+pamäť a koncentráciu, zmierňuje stres a úzkosť, posilňuje motorickú koordináciu a trpezlivosť, poskytuje pocit zmysluplnosti a tvorivého vyjadrenia
+</div>
+
 </div>
 
 <div class="section">
-  <div class="label">Podporuje</div>
-  <div class="text">
-    pamäť a koncentráciu, zmierňuje stres a úzkosť, posilňuje motorickú koordináciu a trpezlivosť, poskytuje pocit zmysluplnosti a tvorivého vyjadrenia
-  </div>
+
+<div class="label">
+Dôležité
 </div>
 
-<div class="section text">
-  Nie sú potrebné žiadne predošlé výtvarné skúsenosti
+<div class="note">
+Nie sú potrebné žiadne predošlé výtvarné skúsenosti.
+</div>
+
 </div>
 
 <div class="section">
-  <div class="label">Vhodný pre</div>
-  <div class="text">
-    dospelých a deti od 10 rokov
-  </div>
+
+<div class="label">
+Vhodný pre
 </div>
 
-<div class="highlight">
-  15€ / 60min
+<div class="text">
+dospelých a deti od 10 rokov
 </div>
 
-<div class="box">
-  <div class="label">V cene</div>
-  <div class="text">
-    Sprevádzanie skúsenou lektorkou<br>
-    Vytvorené dielo si môžete zobrať domov<br>
-    Všetky pomôcky<br>
-    Občerstvenie a voda / čaj / káva
-  </div>
+</div>
+
+</div>
+
+<div class="side-card">
+
+<div class="price">
+15€
+</div>
+
+<div class="price-meta">
+60 minút
+</div>
+
+<div class="includes">
+
+<div class="label">
+V cene
+</div>
+
+<ul>
+<li>Sprevádzanie skúsenou lektorkou</li>
+<li>Vytvorené dielo si môžete zobrať domov</li>
+<li>Všetky pomôcky</li>
+<li>Občerstvenie a voda / čaj / káva</li>
+</ul>
+
+</div>
+
+<a href="mailto:info@karolinart.com" class="cta">
+Rezervovať kurz
+</a>
+
+</div>
+
 </div>
 
 </div>
