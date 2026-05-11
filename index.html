@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Karolína Hodas</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Plus Jakarta Sans',sans-serif;
+background:#f4f0e8;
+color:#171717;
+overflow-x:hidden;
+-webkit-font-smoothing:antialiased;
+}
+
+/* NAVBAR */
+
+.navbar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:30px 60px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:999;
+transition:0.4s ease;
+background:rgba(244,240,232,0.78);
+backdrop-filter:blur(14px);
+}
+
+.navbar.scrolled{
+padding:22px 60px;
+background:rgba(244,240,232,0.95);
+}
+
+.logo{
+font-size:2rem;
+font-weight:700;
+letter-spacing:-2px;
+}
+
+.nav-links{
+display:flex;
+gap:42px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:#171717;
+font-size:0.76rem;
+font-weight:700;
+letter-spacing:2px;
+text-transform:uppercase;
+opacity:0.55;
+transition:0.3s ease;
+}
+
+.nav-links a:hover{
+opacity:1;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+position:relative;
+overflow:hidden;
+display:flex;
+align-items:flex-end;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(
+to top,
+rgba(0,0,0,0.55),
+rgba(0,0,0,0.15)
+);
+}
+
+.hero img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.hero-content{
+position:absolute;
+z-index:2;
+padding:0 70px 90px 70px;
+max-width:1000px;
+}
+
+.hero-content h1{
+font-size:5rem;
+line-height:0.92;
+font-weight:800;
+letter-spacing:-5px;
+color:white;
+margin-bottom:22px;
+}
+
+.hero-content p{
+color:rgba(255,255,255,0.7);
+font-size:0.82rem;
+letter-spacing:3px;
+text-transform:uppercase;
+font-weight:600;
+}
+
+/* SECTIONS */
+
+.section{
+padding:140px 70px;
+}
+
+.container{
+max-width:1400px;
+margin:auto;
+}
+
+.section-top{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:70px;
+gap:50px;
+}
+
+.section-title{
+font-size:3.8rem;
+font-weight:800;
+letter-spacing:-4px;
+line-height:0.95;
+}
+
+.section-line{
+flex:1;
+height:1px;
+background:#d8d1c6;
+}
+
+/* ABOUT */
+
+.about{
+max-width:950px;
+margin:auto;
+}
+
+.about p{
+font-size:1.18rem;
+line-height:2;
+font-weight:400;
+color:#2c2c2c;
+text-align:center;
+}
+
+/* FEATURE */
+
+.feature-grid{
+display:grid;
+grid-template-columns:1fr 0.9fr;
+gap:70px;
+align-items:center;
+}
+
+.feature-image{
+overflow:hidden;
+border-radius:2px;
+}
+
+.feature-image img{
+width:100%;
+height:760px;
+object-fit:cover;
+transition:1s ease;
+}
+
+.feature-image:hover img{
+transform:scale(1.03);
+}
+
+.feature-content{
+max-width:520px;
+}
+
+.feature-label{
+font-size:0.72rem;
+font-weight:700;
+letter-spacing:2px;
+text-transform:uppercase;
+opacity:0.45;
+margin-bottom:20px;
+}
+
+.feature-content h2{
+font-size:3.6rem;
+line-height:0.92;
+font-weight:800;
+letter-spacing:-4px;
+margin-bottom:35px;
+}
+
+.feature-content p{
+line-height:2;
+font-size:0.98rem;
+color:#444;
+}
+
+/* GALLERY */
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:60px 34px;
+}
+
+.art-card{
+cursor:pointer;
+transition:0.45s ease;
+}
+
+.art-card:hover{
+transform:translateY(-10px);
+}
+
+.art-image{
+aspect-ratio:1/1.18;
+overflow:hidden;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.art-image img{
+max-width:100%;
+max-height:100%;
+object-fit:contain;
+transition:0.8s ease;
+display:block;
+}
+
+.art-card:hover img{
+transform:scale(1.05);
+}
+
+.art-meta{
+padding-top:22px;
+}
+
+.art-title{
+font-size:1.6rem;
+font-weight:800;
+letter-spacing:-2px;
+margin-bottom:10px;
+}
+
+.art-medium{
+font-size:0.72rem;
+font-weight:700;
+letter-spacing:2px;
+text-transform:uppercase;
+opacity:0.5;
+margin-bottom:12px;
+}
+
+.art-price{
+font-size:0.95rem;
+font-weight:600;
+}
+
+/* MODAL */
+
+.modal{
+position:fixed;
+inset:0;
+background:rgba(10,10,10,0.96);
+z-index:5000;
+display:none;
+align-items:center;
+justify-content:center;
+padding:50px;
+}
+
+.modal.active{
+display:flex;
+}
+
+.modal-content{
+width:100%;
+max-width:1450px;
+display:grid;
+grid-template-columns:1.2fr 0.8fr;
+gap:80px;
+align-items:center;
+}
+
+.modal-gallery img{
+width:100%;
+max-height:78vh;
+object-fit:contain;
+}
+
+.thumbnail-row{
+display:flex;
+gap:12px;
+margin-top:18px;
+flex-wrap:wrap;
+}
+
+.thumbnail-row img{
+width:82px;
+height:82px;
+object-fit:cover;
+cursor:pointer;
+opacity:0.45;
+transition:0.3s ease;
+}
+
+.thumbnail-row img:hover{
+opacity:1;
+}
+
+.modal-info{
+color:white;
+max-width:420px;
+}
+
+.modal-info h2{
+font-size:3.5rem;
+line-height:0.92;
+font-weight:800;
+letter-spacing:-3px;
+margin-bottom:25px;
+}
+
+.modal-medium{
+font-size:0.72rem;
+font-weight:700;
+letter-spacing:2px;
+text-transform:uppercase;
+opacity:0.5;
+margin-bottom:12px;
+}
+
+.modal-size{
+font-size:0.72rem;
+font-weight:700;
+letter-spacing:2px;
+text-transform:uppercase;
+opacity:0.5;
+margin-bottom:20px;
+}
+
+.modal-price{
+font-size:1rem;
+margin-bottom:35px;
+font-weight:600;
+}
+
+.modal-description{
+line-height:2;
+opacity:0.8;
+font-size:0.98rem;
+}
+
+.close-modal{
+position:absolute;
+top:30px;
+right:40px;
+font-size:3.5rem;
+font-weight:300;
+color:white;
+cursor:pointer;
+}
+
+/* CONTACT */
+
+.contact-wrap{
+text-align:center;
+max-width:700px;
+margin:auto;
+}
+
+.contact-wrap p{
+margin-bottom:15px;
+font-size:1rem;
+color:#444;
+}
+
+.contact-buttons{
+margin-top:35px;
+display:flex;
+justify-content:center;
+gap:16px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:16px 30px;
+border:1px solid #171717;
+text-decoration:none;
+color:#171717;
+font-size:0.75rem;
+font-weight:700;
+letter-spacing:2px;
+text-transform:uppercase;
+transition:0.3s ease;
+}
+
+.btn:hover{
+background:#171717;
+color:white;
+}
+
+/* FOOTER */
+
+footer{
+padding:70px 20px;
+text-align:center;
+font-size:0.82rem;
+opacity:0.45;
+}
+
+/* ANIMATION */
+
+.fade-up{
+opacity:0;
+transform:translateY(40px);
+transition:1s ease;
+}
+
+.fade-up.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* MOBILE */
+
+@media(max-width:1100px){
+
+.hero-content h1{
+font-size:4rem;
+}
+
+.gallery-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.feature-grid{
+grid-template-columns:1fr;
+}
+
+.modal-content{
+grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:700px){
+
+.navbar{
+padding:22px;
+}
+
+.navbar.scrolled{
+padding:18px 22px;
+}
+
+.logo{
+font-size:1.7rem;
+}
+
+.nav-links{
+display:none;
+}
+
+.hero-content{
+padding:0 24px 60px 24px;
+}
+
+.hero-content h1{
+font-size:3rem;
+letter-spacing:-3px;
+}
+
+.section{
+padding:100px 22px;
+}
+
+.section-title{
+font-size:2.8rem;
+letter-spacing:-3px;
+}
+
+.about p{
+font-size:1rem;
+line-height:1.9;
+}
+
+.feature-content h2{
+font-size:2.8rem;
+letter-spacing:-3px;
+}
+
+.gallery-grid{
+grid-template-columns:1fr;
+gap:50px;
+}
+
+.modal{
+padding:20px;
+overflow-y:auto;
+}
+
+.modal-info h2{
+font-size:2.8rem;
+}
+
+.thumbnail-row img{
+width:65px;
+height:65px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="navbar" id="navbar">
+
+<div class="logo">
+Karolína Hodas
+</div>
+
+<nav class="nav-links">
+<a href="#about">O mne</a>
+<a href="#feature">Tvorba</a>
+<a href="#courses">Kurzy</a>
+<a href="#gallery">Galéria</a>
+<a href="#exhibitions">Výstavy</a>
+<a href="#contact">Kontakt</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<img src="images/hero.jpg" alt="">
+
+<div class="hero-content fade-up">
+
+<h1>
+Umenie ako cesta k sebe
+</h1>
+
+<p>
+Contemporary Wood Art
+</p>
+
+</div>
+
+</section>
+
+<section class="section" id="about">
+
+<div class="container">
+
+<div class="section-top fade-up">
+
+<h2 class="section-title">
+O mne
+</h2>
+
+<div class="section-line"></div>
+
+</div>
+
+<div class="about fade-up">
+
+<p>
+K umeniu som bola vedená od detstva.
+Vyrastala som v prostredí slobody,
+tvorivosti a lásky, ktoré formovalo môj vzťah
+k svetu aj k sebe samej.
+Študovala som grafiku, dejiny umenia
+a arteterapiu.
+V minulosti som pôsobila ako pedagogička
+a lektorka výtvarného odboru pre deti a mládež
+a dnes, okrem autorskej tvorby,
+vytváram priestor pre tvorbu,
+slobodu a vnútorné prežívanie.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="feature">
+
+<div class="container">
+
+<div class="feature-grid">
+
+<div class="feature-image fade-up">
+<img src="images/art-feature.jpg" alt="">
+</div>
+
+<div class="feature-content fade-up">
+
+<div class="feature-label">
+Tvorba
+</div>
+
+<h2>
+Každý kus dreva nesie vlastný príbeh.
+</h2>
+
+<p>
+Vo svojej tvorbe prepájam prirodzenosť dreva,
+intuíciu a spontánny tvorivý proces.
+Fascinuje ma jeho štruktúra,
+vôňa, energia aj stopy času,
+ktoré sa snažím citlivo dopĺňať
+pomocou akrylu, tušu a ďalších materiálov.
+Moje diela hovoria o vnútornom svete,
+slobode, prírode a hlbšom vnímaní života.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<section class="section" id="courses">
+
+<div class="container">
+
+<div class="section-top fade-up">
+
+<h2 class="section-title">
+Kurzy
+</h2>
+
+<div class="section-line"></div>
+
+</div>
+
+<div style="text-align:center; max-width:900px; margin:auto;">
+
+<div style="display:flex; flex-direction:column; gap:34px;">
+
+<a href="kurz-dusi-blizko.html" style="text-decoration:none; color:#222; font-size:1.25rem;">
+DUŠI BLÍZKO - Maľovanie ako terapia
+</a>
+
+<a href="kurz-mandala.html" style="text-decoration:none; color:#222; font-size:1.25rem;">
+Osobná mandala
+</a>
+
+<a href="kurz-deti.html" style="text-decoration:none; color:#222; font-size:1.25rem;">
+Detská kresba pre malých aj veľkých
+</a>
+
+<a href="kurz-seniori.html" style="text-decoration:none; color:#222; font-size:1.25rem;">
+Kreatívne dielne pre seniorov
+</a>
+
+<a href="kurz-sukromne.html" style="text-decoration:none; color:#222; font-size:1.25rem;">
+Súkromné hodiny
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="gallery">
+
+<div class="container">
+
+<div class="section-top fade-up">
+
+<h2 class="section-title">
+Galéria
+</h2>
+
+<div class="section-line"></div>
+
+</div>
+
+<div class="gallery-grid" id="galleryGrid"></div>
+
+</div>
+
+</section>
+<section class="section" id="exhibitions">
+
+<div class="container">
+
+<div class="section-top fade-up">
+
+<h2 class="section-title">
+Výstavy
+</h2>
+
+<div class="section-line"></div>
+
+</div>
+
+<div style="max-width:700px; margin:auto; text-align:center;">
+
+<div style="margin-bottom:90px; line-height:2;">
+
+<h3 style="margin-bottom:20px;">2014</h3>
+
+<p>"TO SME MY"</p>
+<p>kolektívna výstava</p>
+<p>Považská galéria umenia, Žilina</p>
+
+</div>
+
+<div style="margin-bottom:90px; line-height:2;">
+
+<h3 style="margin-bottom:20px;">2019</h3>
+
+<p>"111 KÚSKOV LÁSKY"</p>
+<p>samostatná výstava</p>
+<p>Art Studio Z, Žilina</p>
+
+</div>
+
+
+<div style="margin-bottom:90px; line-height:2;">
+
+<h3 style="margin-bottom:20px;">2025</h3>
+
+<p>"RASTIEME SPOLU"</p>
+<p>samostatná výstava</p>
+<p>Galéria Tri steny, Žilina</p>
+
+</div>
+
+<div style="margin-bottom:90px; line-height:2;">
+
+<h3 style="margin-bottom:20px;">2026</h3>
+
+<p>28.–28.11</p>
+<p>OPEN ART FEST</p>
+<p>Praha, Česká republika</p>
+
+</div>
+
+<div style="line-height:2;">
+
+<h3 style="margin-bottom:20px;">2027</h3>
+
+<p>12.–13.6</p>
+<p>OPEN ART FEST</p>
+<p>Viedeň, Rakúsko</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="contact">
+
+<div class="container">
+
+<div class="section-top fade-up">
+
+<h2 class="section-title">
+Kontakt
+</h2>
+
+<div class="section-line"></div>
+
+</div>
+
+<div class="contact-wrap fade-up">
+
+<p>Karolína Hodas</p>
+<p>+421 944 388 697</p>
+
+<div class="contact-buttons">
+
+<a href="mailto:info@karolinart.com" class="btn">
+Email
+</a>
+
+<a href="https://wa.me/41783263556" class="btn">
+WhatsApp
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© Karolína Hodas
+</footer>
+
+<div class="modal" id="modal">
+
+<div class="close-modal" id="closeModal">
+×
+</div>
+
+<div class="modal-content">
+
+<div class="modal-gallery">
+
+<img id="modalMainImage" src="" alt="">
+
+<div class="thumbnail-row" id="thumbnailRow"></div>
+
+</div>
+
+<div class="modal-info">
+
+<h2 id="modalTitle"></h2>
+
+<div class="modal-medium" id="modalMedium"></div>
+
+<div class="modal-size" id="modalSize"></div>
+
+<div class="modal-price" id="modalPrice"></div>
+
+<div class="modal-description" id="modalDescription"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const artworks = [
+
+{
+title:"ANJEL",
+
+price:"80 €",
+
+size:"cca 13 × 13 × 5 cm",
+
+medium:"Akryl na dreve",
+
+description:"Dielo Anjel pôsobí jemne a pokojne, no zároveň v sebe nesie silu ticha, svetla a nádeje. Je pripomienkou ochrany, viery a spojenia.",
+
+images:[
+"images/anjel-1.jpg",
+"images/anjel-2.jpg"
+]
+},
+
+{
+title:"CESTA",
+
+price:"150 €",
+
+size:"cca 13 × 13 × 5 cm",
+
+medium:"Akryl a tuš na dreve",
+
+description:"Život je cesta tvorená nekonečným množstvom rozhodnutí, myšlienok a činov, ktoré formujú náš smer. Každý krok, aj ten zdanlivo nepodstatný, môže zmeniť smer nášho života a ovplyvniť udalosti, ktoré nás ešte len čakajú. Dielo CESTA symbolizuje naše životné putovanie a pripomína, že neexistuje nesprávna cesta. Každá je jedinečná, patrí nám a má svoj význam. Dôležité nie je kam vedie, ale akým človekom sa počas nej stávame. Posolstvom diela je kráčať životom s otvoreným srdcom, s láskou, pokorou a svetlom v sebe.",
+
+images:[
+"images/cesta-1.jpg",
+"images/cesta-2.jpg",
+"images/cesta-3.jpg",
+"images/cesta-4.jpg"
+]
+},
+
+{
+title:"FÉNIX",
+
+price:"50 €",
+
+size:"cca xx × xx × xx cm",
+
+medium:"Tuš na dreve",
+
+description:"FÉNIX je odpradávna symbolom znovuzrodenia, vnútornej sily a nových začiatkov. Predstavuje schopnosť človeka postaviť sa po pádoch, prekonať náročné obdobia a zmeniť bolesť na rast. Tak ako bájny vták povstáva z popola, aj človek v sebe nachádza silu začať znova – silnejší, múdrejší a vedomejší.",
+
+images:[
+"images/fenix-1.jpg",
+"images/fenix-2.jpg"
+]
+},
+
+{
+title:"EMÓCIE",
+
+price:"150 €",
+
+size:"cca 13 × 13 × 5 cm",
+
+medium:"Akryl a tuš na dreve",
+
+description:"Emócie sú neoddeliteľnou súčasťou nášho života. Neustále sa prelínajú a ovplyvňujú spôsob, akým vnímame svet okolo seba. Formujú naše reakcie, myšlienky, rozhodnutia aj činy. Dielo EMÓCIA zachytáva vnútorný svet človeka a pripomína, že práve emócie dávajú životu hĺbku, silu a skutočný význam.",
+
+images:[
+"images/emocie-1.jpg",
+"images/emocie-2.jpg",
+"images/emocie-3.jpg"
+]
+},
+
+{
+title:"HRČA",
+
+price:"80 €",
+
+size:"cca 13 × 13 × 5 cm",
+
+medium:"Akryl na dreve",
+
+description:"Dielo HRČA poukazuje na krásu prirodzenosti a jedinečnosti. To, čo sa môže na prvý pohľad zdať ako nedokonalosť alebo vada, môže byť v skutočnosti tým najvzácnejším, najhodnotnejším a najopravdovejším.",
+
+images:[
+"images/hrca-1.jpg",
+"images/hrca-2.jpg",
+"images/hrca-3.jpg",
+"images/hrca-4.jpg",
+"images/hrca-5.jpg",
+"images/hrca-6.jpg"
+]
+},
+
+{
+title:"HORY",
+
+price:"250 €",
+
+size:"priemer cca 24 cm • hrúbka cca 5 cm",
+
+medium:"Akryl na dreve",
+
+description:"Dielo HORY vzdáva hold majestátnej Matke prírode, jej sile, pokoju a energii, ktorú nám neustále poskytuje. Hory od nepamäti symbolizujú pevnosť, slobodu a hlboké spojenie človeka s prírodou.",
+
+images:[
+"images/hory-1.jpg",
+"images/hory-2.jpg",
+"images/hory-3.jpg"
+]
+},
+
+{
+title:"JA",
+
+price:"50 €",
+
+size:"cca 13 × 13 × 5 cm",
+
+medium:"Akryl na dreve",
+
+description:"Hoci je dielo JA osobnou výpoveďou autorky, jeho názov funguje ako univerzálne echo. Je to priama výzva pre každého diváka k uvedomeniu si svojej vlastnej vnútornej sily a kreativity.",
+
+images:[
+"images/ja-1.jpg",
+"images/ja-2.jpg",
+"images/ja-3.jpg"
+]
+},
+
+{
+title:"LANE",
+
+price:"150 €",
+
+size:"cca 13 × 13 × 5 cm",
+
+medium:"Akryl na dreve",
+
+images:[
+"images/lane-1.jpg",
+"images/lane-2.jpg",
+"images/lane-3.jpg",
+"images/lane-4.jpg"
+]
+},
+
+{
+title:"LÁSKA",
+
+price:"150 €",
+
+size:"cca 13 × 13 × 5 cm",
+
+medium:"Akryl a tuš na dreve",
+
+images:[
+"images/laska-1.jpg",
+"images/laska-2.jpg",
+"images/laska-3.jpg",
+"images/laska-4.jpg"
+]
+},
+
+{
+title:"LES",
+
+price:"120 €",
+
+size:"cca 20 × 20 cm",
+
+medium:"Tuš na dreve",
+
+description:"",
+
+images:[
+"images/les-1.jpg",
+"images/les-2.jpg",
+"images/les-3.jpg",
+"images/les-4.jpg",
+"images/les-5.jpg",
+"images/les-6.jpg",
+"images/les-7.jpg"
+]
+},
+
+{
+title:"LOS",
+
+price:"120 €",
+
+size:"cca xx × xx cm",
+
+medium:"Tuš na dreve",
+
+description:"",
+
+images:[
+"images/los-1.jpg",
+"images/los-2.jpg"
+]
+},
+
+{
+title:"MANDALA",
+
+price:"150 €",
+
+size:"priemer cca 24 cm • hrúbka cca 5 cm",
+
+medium:"Akryl a tuš na dreve",
+
+description:"",
+
+images:[
+"images/mandala-1.jpg",
+"images/mandala-2.jpg",
+"images/mandala-3.jpg",
+"images/mandala-4.jpg"
+]
+},
+
+{
+title:"NÁDYCH",
+
+price:"90 €",
+
+size:"cca xx × xx cm",
+
+medium:"Akryl na dreve",
+
+description:"",
+
+images:[
+"images/nadych-1.jpg",
+"images/nadych-2.jpg"
+]
+},
+
+{
+title:"NAŠE LESY",
+
+price:"180 €",
+
+size:"cca 13 × 13 × 5 cm",
+
+medium:"Akryl a tuš na dreve",
+
+description:"",
+
+images:[
+"images/naselesy-1.jpg",
+"images/naselesy-2.jpg",
+"images/naselesy-3.jpg"
+]
+},
+
+{
+title:"OKO",
+
+price:"180 €",
+
+size:"cca xx × xx × xx cm",
+
+medium:"Akryl a tuš na dreve",
+
+description:"",
+
+images:[
+"images/oko-1.jpg",
+"images/oko-2.jpg"
+]
+},
+
+{
+title:"OSVIETENIE",
+
+price:"150 €",
+
+size:"cca 13 × 13 × 5 cm",
+
+medium:"Akryl a tuš na dreve",
+
+description:"",
+
+images:[
+"images/osvietenie-1.jpg",
+"images/osvietenie-2.jpg",
+"images/osvietenie-3.jpg",
+"images/osvietenie-4.jpg",
+"images/osvietenie-5.jpg"
+]
+},
+
+];
+
+const galleryGrid = document.getElementById("galleryGrid");
+
+artworks.forEach((art,index)=>{
+
+const card = document.createElement("div");
+
+card.classList.add("art-card","fade-up");
+
+card.innerHTML = `
+
+<div class="art-image">
+<img src="${art.images[0]}" alt="">
+</div>
+
+<div class="art-meta">
+
+<div class="art-title">
+${art.title}
+</div>
+
+<div class="art-medium">
+${art.medium}
+</div>
+
+<div class="art-price">
+${art.price}
+</div>
+
+</div>
+
+`;
+
+card.addEventListener("click",()=>openModal(index));
+
+galleryGrid.appendChild(card);
+
+});
+
+const modal = document.getElementById("modal");
+const modalMainImage = document.getElementById("modalMainImage");
+const modalTitle = document.getElementById("modalTitle");
+const modalMedium = document.getElementById("modalMedium");
+const modalSize = document.getElementById("modalSize");
+const modalPrice = document.getElementById("modalPrice");
+const modalDescription = document.getElementById("modalDescription");
+const thumbnailRow = document.getElementById("thumbnailRow");
+
+function openModal(index){
+
+const art = artworks[index];
+
+modal.classList.add("active");
+
+modalMainImage.src = art.images[0];
+
+modalTitle.textContent = art.title;
+
+modalMedium.textContent = art.medium;
+
+modalSize.textContent = art.size;
+
+modalPrice.textContent = art.price;
+
+if(art.description && art.description !== ""){
+
+modalDescription.textContent = art.description;
+
+}else{
+
+modalDescription.textContent =
+"Každé dielo vzniká intuitívne ako spojenie prírodného materiálu a vnútorného prežívania.";
+
+}
+
+thumbnailRow.innerHTML = "";
+
+art.images.forEach(img=>{
+
+const thumb = document.createElement("img");
+
+thumb.src = img;
+
+thumb.addEventListener("click",()=>{
+modalMainImage.src = img;
+});
+
+thumbnailRow.appendChild(thumb);
+
+});
+
+}
+
+document.getElementById("closeModal").addEventListener("click",()=>{
+modal.classList.remove("active");
+});
+
+modal.addEventListener("click",(e)=>{
+if(e.target === modal){
+modal.classList.remove("active");
+}
+});
+
+document.addEventListener("keydown",(e)=>{
+if(e.key === "Escape"){
+modal.classList.remove("active");
+}
+});
+
+window.addEventListener("scroll",()=>{
+
+const navbar = document.getElementById("navbar");
+
+if(window.scrollY > 40){
+navbar.classList.add("scrolled");
+}else{
+navbar.classList.remove("scrolled");
+}
+
+});
+
+const faders = document.querySelectorAll(".fade-up");
+
+const observer = new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+
+});
+
+},{
+threshold:0.1
+});
+
+faders.forEach(el=>observer.observe(el));
+
+</script>
+
+</body>
+</html>
